@@ -30,6 +30,7 @@
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lTM-7c-Hxi">
                                                 <rect key="frame" x="98.333333333333329" y="51.999999999999986" width="196.33333333333337" height="196.66666666666663"/>
+                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0w-xU-28d">
                                                 <rect key="frame" x="60" y="271" width="273" height="20.333333333333314"/>
@@ -64,28 +65,77 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="z8s-s9-ZNZ"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="0dd-l6-4dH"/>
                             </scrollView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeL-Ru-YiB">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <connections>
+                                    <segue destination="RHG-JZ-rEd" kind="embed" id="b4u-4B-E1K"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zp0-SP-D2G" secondAttribute="trailing" id="2DL-Ir-3S8"/>
+                            <constraint firstItem="zeL-Ru-YiB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="4EE-Vd-Wu3"/>
+                            <constraint firstItem="zeL-Ru-YiB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="E4S-uR-7DF"/>
                             <constraint firstItem="Zp0-SP-D2G" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XOs-s2-Smv"/>
                             <constraint firstItem="Zp0-SP-D2G" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="p3O-TU-gWZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Zp0-SP-D2G" secondAttribute="bottom" id="pu5-rt-NDu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zeL-Ru-YiB" secondAttribute="bottom" id="sxb-Xc-ebN"/>
+                            <constraint firstItem="zeL-Ru-YiB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="uvM-ci-wxS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="characterDescriptionLabel" destination="O0w-xU-28d" id="YKj-SD-a1Y"/>
                         <outlet property="characterImageView" destination="lTM-7c-Hxi" id="ZRa-sZ-6vJ"/>
                         <outlet property="characterNameLabel" destination="YSS-Nc-aju" id="eW3-V0-TXE"/>
+                        <outlet property="placeholderView" destination="zeL-Ru-YiB" id="8RN-sU-91x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-460.30534351145036" y="-23.239436619718312"/>
+            <point key="canvasLocation" x="-1158" y="-42"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uz4-wq-2GM">
+            <objects>
+                <viewController id="RHG-JZ-rEd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zZc-bK-erI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3S4-TQ-Ips">
+                                <rect key="frame" x="76.666666666666686" y="305.33333333333331" width="240" height="148.33333333333331"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="doc.text.magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ef3-aY-q85">
+                                        <rect key="frame" x="0.0" y="0.3333333333333357" width="240" height="108.66666666666666"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please make a selection to see details." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFe-mM-Kcb">
+                                        <rect key="frame" x="0.0" y="107.6666666666667" width="240" height="40.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3S4-TQ-Ips" firstAttribute="height" secondItem="zZc-bK-erI" secondAttribute="height" multiplier="0.195433" id="EVZ-fQ-EdD"/>
+                            <constraint firstItem="3S4-TQ-Ips" firstAttribute="width" secondItem="zZc-bK-erI" secondAttribute="width" multiplier="0.610687" id="KYI-Hf-uOM"/>
+                            <constraint firstItem="3S4-TQ-Ips" firstAttribute="centerX" secondItem="zZc-bK-erI" secondAttribute="centerX" id="Tjm-Ec-pq5"/>
+                            <constraint firstItem="3S4-TQ-Ips" firstAttribute="centerY" secondItem="zZc-bK-erI" secondAttribute="centerY" id="oh2-Wn-Pei"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DRy-ki-oSP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-331" y="-35"/>
         </scene>
     </scenes>
     <resources>
+        <image name="doc.text.magnifyingglass" catalog="system" width="110" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

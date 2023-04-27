@@ -25,7 +25,7 @@ class ImageService {
         }
         
         guard let url = URL(string: completeUrlString) else {
-            completion(UIImage(systemName: "xmark.circle"))
+            completion(UIImage(systemName: "person.crop.circle.dashed"))
             return
         }
         
@@ -33,14 +33,14 @@ class ImageService {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let error = error {
                     print("Error downloading image: \(error.localizedDescription)")
-                    let image = UIImage(systemName: "xmark.circle")
+                    let image = UIImage(systemName: "person.crop.circle.badge.xmark")
                     CacheService.shared.imageCache[completeUrlString] = image
                     completion(image)
                 } else if let data = data, let image = UIImage(data: data) {
                     CacheService.shared.imageCache[completeUrlString] = image
                     completion(image)
                 } else {
-                    let image = UIImage(systemName: "person")
+                    let image = UIImage(systemName: "person.crop.circle.badge.questionmark")
                     completion(image)
                 }
             }.resume()
