@@ -8,14 +8,20 @@
 import Foundation
 import UIKit
 
-enum ImageDownloadError: Error {
-    case invalidURL
-    case downloadError
-}
-
+/**
+ `ImageService` is a class that provides a static method to download images and cache them using a `CacheService`.
+ */
 class ImageService {
+    
+    /// A queue for network requests, limiting the number of concurrent tasks to 5.
     static let networkQueue = NetworkQueue(maxConcurrentTasks: 5)
     
+    /**
+     Static method to download an image from a given URL and return it using a completion handler. If the image is already cached, it is returned from the cache instead of downloading it again.
+     - Parameters:
+        - urlString: The URL of the image to download.
+        - completion: A completion handler that receives the downloaded image or `nil`.
+     */
     static func downloadImage(from urlString: String, completion: @escaping (UIImage?) -> Void) {
         let completeUrlString = "https://duckduckgo.com/\(urlString)"
         

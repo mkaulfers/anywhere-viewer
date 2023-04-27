@@ -7,9 +7,13 @@
 
 import UIKit
 
+/// A table view cell for displaying information about a character, including an image, name, and description.
 class CharacterCell: UITableViewCell {
+    
+    /// The data model for the cell, which includes information about the character to be displayed.
     typealias CharInfo = RelatedTopic
     
+    /// The character data to be displayed in the cell.
     var listItem: CharInfo? {
         didSet {
             let imageUrlString = listItem?.icon.url
@@ -29,7 +33,8 @@ class CharacterCell: UITableViewCell {
             if let description { shortDescriptionLabel.text = description }
         }
     }
-
+    
+    /// The image view for displaying the character's image.
     private let characterImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -37,8 +42,8 @@ class CharacterCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-
-
+    
+    /// The label for displaying the character's name.
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Name Unknown"
@@ -48,6 +53,7 @@ class CharacterCell: UITableViewCell {
         return label
     }()
     
+    /// The label for displaying a short description of the character.
     private let shortDescriptionLabel: UILabel = {
         let label = UILabel()
         label.text = ""
@@ -58,9 +64,10 @@ class CharacterCell: UITableViewCell {
         return label
     }()
     
+    /// Initializes a new instance of the cell with the given style and reuse identifier.
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
         contentView.addSubview(characterImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(shortDescriptionLabel)
