@@ -21,6 +21,7 @@ class ListViewController: UITableViewController {
     private var filteredDataSource: [RelatedTopic] = []
     private var cellHeightTracker: CGFloat = 0.0
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()

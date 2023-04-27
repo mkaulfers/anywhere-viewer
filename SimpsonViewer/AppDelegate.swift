@@ -3,7 +3,28 @@
 //  AnywhereDemo
 //
 //  Created by Matthew Kaulfers on 4/26/23.
+
+// Disclaimer and Notice of Limited Use:
 //
+// Please be advised that the code contained in this project (hereinafter referred to as the "Code")
+// is provided solely for review purposes. The Code is the exclusive property of Matthew Kaulfers
+// (hereinafter referred to as the "Author") and remains subject to all applicable intellectual
+// property rights, including but not limited to copyright and trade secret protections.
+//
+// By accessing or reviewing the Code, you expressly acknowledge and agree that you shall not,
+// directly or indirectly, copy, modify, distribute, reproduce, create derivative works, reverse
+// engineer, decompile, or otherwise attempt to discover, exploit, or use the Code or any portion
+// thereof for any purpose other than the express purpose of review, without the prior written
+// consent of the Author.
+//
+// In the event of any unauthorized use, copying, or distribution of the Code or any portion
+// thereof, you shall be held legally responsible for any and all damages, losses, or liabilities
+// incurred by the Author, including but not limited to legal fees and costs, as a result of such
+// unauthorized actions.
+//
+// Your access to and review of the Code shall not be construed as a grant of any license or other
+// rights to the Code, either expressly or by implication, estoppel, or otherwise, except as
+// expressly set forth in this Disclaimer and Notice of Limited Use.
 
 import UIKit
 
